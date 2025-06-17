@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr4utfbbcxty3"]
+
+[ext_resource type="Script" uid="uid://dmks1jbehtplq" path="res://scripts/sign_spiny.gd" id="1_8eok4"]
+[ext_resource type="Texture2D" uid="uid://bs5njprchm0sf" path="res://Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="2_h2nkl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g542w"]
+size = Vector2(41, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b607"]
+atlas = ExtResource("2_h2nkl")
+region = Rect2(922, 28, 51, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdcsj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b607")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65peo"]
+atlas = ExtResource("2_h2nkl")
+region = Rect2(973, 28, 51, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6tgp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65peo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="sign" type="Area2D" groups=["sign"]]
+position = Vector2(-4, -44)
+script = ExtResource("1_8eok4")
+
+[node name="sign" type="CollisionShape2D" parent="." groups=["sign"]]
+position = Vector2(21.5, -45.5)
+shape = SubResource("RectangleShape2D_g542w")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 15)
+sprite_frames = SubResource("SpriteFrames_cdcsj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(30, 13)
+sprite_frames = SubResource("SpriteFrames_s6tgp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
