@@ -23,6 +23,7 @@ func spin_player(player):
 	# Apply upward boost
 	player.current_speed = speed
 	player.velocity.y = -300
+	player.rotation_degrees = 0
 	await get_tree().create_timer(0.1).timeout
 
 	# Restore gravity

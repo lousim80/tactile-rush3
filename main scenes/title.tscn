@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://ba5mdute26kj2"]
+[gd_scene load_steps=4 format=3 uid="uid://ba5mdute26kj2"]
 
-[node name="Title" type="Node2D"]
+[ext_resource type="Script" uid="uid://3qlrrac8r5qi" path="res://main scenes/title.gd" id="1_dya6u"]
+[ext_resource type="Texture2D" uid="uid://bipcmc36rjr41" path="res://main scenes/Screenshot 2025-06-16 145034.png" id="2_5ajfe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rdgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ajfe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dya6u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(1.83162, 1.02606)
+sprite_frames = SubResource("SpriteFrames_0rdgr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Level Select"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)

@@ -1,23 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://du7isygdywxnk"]
-
-[ext_resource type="Texture2D" uid="uid://bipcmc36rjr41" path="res://main scenes/Screenshot 2025-06-16 145034.png" id="1_g8vvj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wra8u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_g8vvj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[gd_scene format=3 uid="uid://du7isygdywxnk"]
 
 [node name="level select" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(577, 325)
-scale = Vector2(1.83162, 1.02606)
-sprite_frames = SubResource("SpriteFrames_wra8u")
