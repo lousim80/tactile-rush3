@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://6avo6d0nxqmj"]
 
-[ext_resource type="Script" uid="uid://barhf4rage6hr" path="res://area_2d.gd" id="1_ucang"]
+[ext_resource type="Script" uid="uid://barhf4rage6hr" path="res://scripts/area_2d.gd" id="1_ucang"]
 [ext_resource type="Texture2D" uid="uid://dtpbjbo1t6hha" path="res://Super Mango Platformer Assets by JuhoSprite/Bouncepad_Red.png" id="2_bhlva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjqqa"]

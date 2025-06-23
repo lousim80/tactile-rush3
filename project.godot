@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Tactile-Rush"
-run/main_scene="uid://dqr2tv5vqiao4"
+run/main_scene="uid://ba5mdute26kj2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalSettings="*res://scripts/GlobalSettings.gd"
 
 [input]
 

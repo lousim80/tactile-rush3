@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cpwpt6sdtkpfu"]
 
-[ext_resource type="Script" uid="uid://bcr7tio4bwwj8" path="res://kill_zone.gd" id="1_4hlar"]
+[ext_resource type="Script" uid="uid://bcr7tio4bwwj8" path="res://scripts/kill_zone.gd" id="1_4hlar"]
 [ext_resource type="Texture2D" uid="uid://cgpnpuk8j8n3c" path="res://Super Mango Platformer Assets by JuhoSprite/Lava.png" id="2_htlrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hlar"]

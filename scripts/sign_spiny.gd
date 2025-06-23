@@ -30,10 +30,10 @@ func spin_player(player):
 	player.gravity = 20
 	speed = 0
 
-	# Increase speed and max speed, but cap at 1000
+	# Increase speed and max speed, but cap at 700
 	if player.current_speed < 500:
-		player.current_speed = min(player.current_speed + 100, 1000)
-		player.max_speed = min(player.max_speed + 100, 1000)
+		player.current_speed = min(player.current_speed + 100, 700)
+		player.max_speed = min(player.max_speed + 100, 700)
 
 	# Optionally pause before allowing another interaction (cooldown)
 	await get_tree().create_timer(2).timeout

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bx5h8y7xlpd2f"]
 
-[ext_resource type="Script" uid="uid://cry0t3uqkm3py" path="res://climb.gd" id="1_r7mbc"]
+[ext_resource type="Script" uid="uid://cry0t3uqkm3py" path="res://scripts/climb.gd" id="1_r7mbc"]
 [ext_resource type="Texture2D" uid="uid://bilwxquf37v24" path="res://Super Mango Platformer Assets by JuhoSprite/Vine.png" id="2_o4iev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av66j"]

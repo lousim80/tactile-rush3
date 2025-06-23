@@ -12,7 +12,7 @@ func _ready():
 
 
 func _on_start_game_pressed():
-	get_tree().change_scene_to_file("res://main scenes/game.tscn")
+	get_tree().change_scene_to_file("res://main scenes/main_menu.tscn")
 
 func _on_level_select_pressed():
 	get_tree().change_scene_to_file("res://main scenes/level_select.tscn")
