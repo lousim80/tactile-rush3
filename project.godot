@@ -13,7 +13,6 @@ config_version=5
 config/name="Tactile-Rush"
 run/main_scene="uid://ba5mdute26kj2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

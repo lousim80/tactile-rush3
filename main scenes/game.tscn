@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqr2tv5vqiao4"]
+[gd_scene load_steps=18 format=3 uid="uid://dqr2tv5vqiao4"]
 
 [ext_resource type="Texture2D" uid="uid://cb1sq5otwgnh4" path="res://Super Mango Platformer Assets by JuhoSprite/Leaf_Tileset.png" id="1_1nxu5"]
+[ext_resource type="Script" uid="uid://bbc7m2jmydib1" path="res://main scenes/game.gd" id="1_50g1c"]
 [ext_resource type="Texture2D" uid="uid://cdirp6pi5blwy" path="res://Super Mango Platformer Assets by JuhoSprite/Cloud_Tileset.png" id="2_tujja"]
 [ext_resource type="Texture2D" uid="uid://cpf7ar81iih52" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Tileset.png" id="3_fajbg"]
 [ext_resource type="Texture2D" uid="uid://dnne13g6ojbbn" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Rock_Tileset.png" id="4_38nc2"]
@@ -116,6 +117,7 @@ sources/3 = SubResource("TileSetAtlasSource_o43ah")
 sources/4 = SubResource("TileSetAtlasSource_457nn")
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_50g1c")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_u7wxv")
@@ -132,7 +134,7 @@ position = Vector2(-671, 239)
 position = Vector2(12, -24)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="Area2D" parent="." instance=ExtResource("7_fajbg")]
 position = Vector2(365, -8)

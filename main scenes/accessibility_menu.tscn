@@ -4,8 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dk23yk88oc1w3" path="res://fonts/SavageGarden-Block.otf" id="1_23jmq"]
 [ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="3_k56ld"]
 
-[sub_resource type="Theme" id="Theme_3vjsm"]
-/fonts/font = ExtResource("1_23jmq")
+[sub_resource type="Theme" id="Theme_xfdd1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vjsm"]
 bg_color = Color(0, 0.247316, 0.528243, 1)
@@ -26,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_3vjsm")
+theme = SubResource("Theme_xfdd1")
 script = ExtResource("1_3vjsm")
 
 [node name="Panel" type="Panel" parent="."]
@@ -52,43 +51,66 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("3_k56ld")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 124
 text = "Accessibility Settings"
 
-[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer"]
+[node name="CheckBox_TTS" type="CheckBox" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_23jmq")
 theme_override_font_sizes/font_size = 64
 text = "Text-to-Speech"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="CheckBox_Sign" type="CheckBox" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_23jmq")
+theme_override_font_sizes/font_size = 64
+text = "Enable Sign Language"
+
+[node name="HBoxContainer_Color" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Color"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_23jmq")
 theme_override_font_sizes/font_size = 64
 text = "Color Mode:"
 
-[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer3"]
+[node name="OptionButton_Color" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer_Color"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_23jmq")
 theme_override_font_sizes/font_size = 64
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer_Subtitles" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_23jmq")
 theme_override_font_sizes/font_size = 64
 text = "Subtitles Size:"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="HSlider_Subtitles" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+min_value = 10.0
+max_value = 36.0
+value = 10.0
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+[node name="Label_SubtitlePreview" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_23jmq")
+theme_override_font_sizes/font_size = 64
+text = "Preview Text"
+
+[node name="Button_Back" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_23jmq")
 theme_override_font_sizes/font_size = 64

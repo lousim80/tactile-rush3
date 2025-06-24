@@ -1,6 +1,8 @@
 extends Control
 
 func _ready():
+	GlobalSettings.apply_color_scheme(get_tree().root)
+	
 	$VBoxContainer/Button.text = "Start Game"
 	$VBoxContainer/Button.pressed.connect(_on_start_game_pressed)
 
