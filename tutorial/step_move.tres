@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://bla6d4s62co3s"]
+
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_nghi4"]
+
+[resource]
+script = ExtResource("1_nghi4")
+text = "Move right using the D key"
+audio_path = "res://audio/Right.ogg"
+action_required = "move_right"
+duration = 3.0
+metadata/_custom_type_script = "uid://5gcmikkokxyg"

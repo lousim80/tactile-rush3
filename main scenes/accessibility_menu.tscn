@@ -104,7 +104,7 @@ min_value = 10.0
 max_value = 36.0
 value = 10.0
 
-[node name="Label_SubtitlePreview" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
+[node name="subtitle_label" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_23jmq")
 theme_override_font_sizes/font_size = 64

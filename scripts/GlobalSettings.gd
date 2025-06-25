@@ -1,53 +1,75 @@
+# GlobalSettings.gd
 extends Node
 
-# Accessibility toggles
 var tts_enabled: bool = false
 var sign_enabled: bool = false
-var color_mode: int = 0
-var subtitles_size: float = 16.0
+var color_mode: int = 0  # 0=Default,1=Deuteranopia,2=HighContrast
+var subtitles_size: int = 16
 
-# Add more if needed later, like:
-# var high_contrast_enabled = false
-# var game_volume = 1.0
+var default_font_colors := {}
+var default_button_styleboxes := {}
 
+func cache_defaults(root_node):
+	default_font_colors.clear()
+	default_button_styleboxes.clear()
+	_cache_node_defaults(root_node)
 
-# We need access to those caches — you can pass them in or make global.
-# For simplicity, pass dictionaries as arguments.
+func _cache_node_defaults(node):
+	if node is Label or node is Button or node is CheckBox:
+		default_font_colors[node] = node.get_theme_color("font_color")
+		if node is Button:
+			default_button_styleboxes[node] = node.get_theme_stylebox("normal")
+	if node is Sprite2D:
+		default_font_colors[node] = node.modulate
+	for child in node.get_children():
+		_cache_node_defaults(child)
 
-func apply_color_scheme(root_node: Node, 
-						default_font_colors := {}, 
-						default_button_styleboxes := {}) -> void:
+func apply_color_scheme(root_node):
 	match color_mode:
 		0:
-			_clear_colors(root_node, default_font_colors, default_button_styleboxes)
+			_clear_colors(root_node)
 		1:
-			_set_colors(root_node, Color(0.85, 0.9, 1), Color(0.1, 0.2, 0.6))
+			_apply_deuteranopia(root_node)
 		2:
-			_set_colors(root_node, Color(0, 0, 0), Color(1, 1, 0))
+			_apply_high_contrast(root_node)
 
-func _set_colors(node: Node, bg_color: Color, fg_color: Color) -> void:
-	if node is Sprite2D or node is TileMap:
-		node.modulate = fg_color
-	elif node is ColorRect:
-		node.color = bg_color
-	elif node is Label or node is Button or node is CheckBox:
-		node.add_theme_color_override("font_color", fg_color)
-		if node is Button:
-			var box = StyleBoxFlat.new()
-			box.bg_color = bg_color
-			node.add_theme_stylebox_override("normal", box)
-	for child in node.get_children():
-		_set_colors(child, bg_color, fg_color)
-
-func _clear_colors(node: Node, default_font_colors: Dictionary, default_button_styleboxes: Dictionary) -> void:
-	if node is Sprite2D or node is TileMap:
-		node.modulate = Color(1, 1, 1, 1)
-	elif node is ColorRect:
-		node.color = Color(1, 1, 1, 1)
-	elif node is Label or node is Button or node is CheckBox:
-		if default_font_colors.has(node):
+func _clear_colors(node):
+	if node in default_font_colors:
+		if node is Sprite2D:
+			node.modulate = default_font_colors[node]
+		else:
 			node.add_theme_color_override("font_color", default_font_colors[node])
-		if node is Button and default_button_styleboxes.has(node):
-			node.add_theme_stylebox_override("normal", default_button_styleboxes[node])
+	if node is Button and node in default_button_styleboxes:
+		node.add_theme_stylebox_override("normal", default_button_styleboxes[node])
 	for child in node.get_children():
-		_clear_colors(child, default_font_colors, default_button_styleboxes)
+		_clear_colors(child)
+
+func _apply_deuteranopia(node):
+	if node is Label or node is Button or node is CheckBox:
+		node.add_theme_color_override("font_color", Color(0.0, 0.6, 0.6))
+	if node is Button:
+		node.add_theme_stylebox_override("normal", create_stylebox(Color(0.0, 0.4, 0.4)))
+	if node is Sprite2D:
+		node.modulate = Color(0.7, 0.9, 0.9)
+	for child in node.get_children():
+		_apply_deuteranopia(child)
+
+func _apply_high_contrast(node):
+	if node is Label or node is Button or node is CheckBox:
+		node.add_theme_color_override("font_color", Color.BLACK)
+	if node is Button:
+		node.add_theme_stylebox_override("normal", create_stylebox(Color.YELLOW))
+	if node is Sprite2D:
+		node.modulate = Color(1, 1, 0.5)
+	for child in node.get_children():
+		_apply_high_contrast(child)
+
+func create_stylebox(color: Color) -> StyleBoxFlat:
+	var sb = StyleBoxFlat.new()
+	sb.bg_color = color
+	sb.border_width_left = 2
+	sb.border_width_top = 2
+	sb.border_width_right = 2
+	sb.border_width_bottom = 2
+	sb.border_color = Color.BLACK
+	return sb

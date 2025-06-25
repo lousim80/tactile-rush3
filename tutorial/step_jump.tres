@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://ctfr82fwtshvv"]
+
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_82j7n"]
+
+[resource]
+script = ExtResource("1_82j7n")
+text = "Press SPACE to jump."
+audio_path = "res://audio/welcome.ogg"
+action_required = "jump"
+duration = 3.0
+metadata/_custom_type_script = "uid://5gcmikkokxyg"

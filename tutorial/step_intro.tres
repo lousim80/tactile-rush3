@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://dggdxrfl1x245"]
+
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_6dbib"]
+
+[resource]
+script = ExtResource("1_6dbib")
+text = "Welcome to the tutorial!"
+audio_path = "res://audio/welcome.ogg"
+action_required = ""
+duration = 3.0
+metadata/_custom_type_script = "uid://5gcmikkokxyg"

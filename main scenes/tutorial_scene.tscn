@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsdf7ywrjcq5q"]
+
+[ext_resource type="PackedScene" uid="uid://dprh05wn8xinq" path="res://main scenes/node_2d.tscn" id="1_m3ncv"]
+[ext_resource type="Script" uid="uid://cw0026u12moow" path="res://main scenes/tutorial_manager.gd" id="2_ykmc8"]
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="3_yg665"]
+[ext_resource type="Resource" uid="uid://dggdxrfl1x245" path="res://tutorial/step_intro.tres" id="4_1c6lq"]
+[ext_resource type="Resource" uid="uid://ctfr82fwtshvv" path="res://tutorial/step_jump.tres" id="5_hlqyr"]
+[ext_resource type="Resource" uid="uid://bla6d4s62co3s" path="res://tutorial/step_move.tres" id="6_f8lne"]
+
+[node name="TutorialScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_m3ncv")]
+position = Vector2(55, -19)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="TutorialManager" type="Node" parent="."]
+script = ExtResource("2_ykmc8")
+steps = Array[ExtResource("3_yg665")]([ExtResource("4_1c6lq"), ExtResource("5_hlqyr"), ExtResource("6_f8lne")])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TutorialManager"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SubtitlesBackground" type="ColorRect" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubtitlesLabel" type="Label" parent="UI/SubtitlesBackground"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
