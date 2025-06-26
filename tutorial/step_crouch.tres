@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://c7gyrht72ibes"]
+
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_3luex"]
+
+[resource]
+script = ExtResource("1_3luex")
+text = "Hold down to crouch under tight spaces."
+audio_path = ""
+action_required = "crouch"
+duration = 3.0
+metadata/_custom_type_script = "uid://5gcmikkokxyg"

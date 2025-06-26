@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_6dbib")
-text = "Welcome to the tutorial!"
+text = "Welcome to the game! Let's learn the basics."
 audio_path = "res://audio/welcome.ogg"
 action_required = ""
-duration = 3.0
+duration = 3.5
 metadata/_custom_type_script = "uid://5gcmikkokxyg"

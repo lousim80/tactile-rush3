@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://d3do7mdgs6kjk"]
+
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_0vwl5"]
+
+[resource]
+script = ExtResource("1_0vwl5")
+text = "That’s it for now. Good luck and have fun!"
+audio_path = ""
+action_required = ""
+duration = 3.5
+metadata/_custom_type_script = "uid://5gcmikkokxyg"

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://vt3jjff6qh6p" path="res://main scenes/flippy_spinny.tscn" id="8_38nc2"]
 [ext_resource type="PackedScene" uid="uid://bx5h8y7xlpd2f" path="res://main scenes/climb.tscn" id="10_fm37f"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm37f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50g1c"]
 texture = ExtResource("1_1nxu5")
 0:0/0 = 0
 1:0/0 = 0
@@ -24,7 +24,7 @@ texture = ExtResource("1_1nxu5")
 1:2/0 = 0
 2:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50g1c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwd4v"]
 texture = ExtResource("2_tujja")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -45,7 +45,7 @@ texture = ExtResource("2_tujja")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwd4v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o43ah"]
 texture = ExtResource("3_fajbg")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -66,7 +66,7 @@ texture = ExtResource("3_fajbg")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o43ah"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_457nn"]
 texture = ExtResource("4_38nc2")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -87,7 +87,7 @@ texture = ExtResource("4_38nc2")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_457nn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7wxv"]
 texture = ExtResource("5_8tmv5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -110,11 +110,11 @@ texture = ExtResource("5_8tmv5")
 
 [sub_resource type="TileSet" id="TileSet_u7wxv"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_fm37f")
-sources/1 = SubResource("TileSetAtlasSource_50g1c")
-sources/2 = SubResource("TileSetAtlasSource_cwd4v")
-sources/3 = SubResource("TileSetAtlasSource_o43ah")
-sources/4 = SubResource("TileSetAtlasSource_457nn")
+sources/0 = SubResource("TileSetAtlasSource_50g1c")
+sources/1 = SubResource("TileSetAtlasSource_cwd4v")
+sources/2 = SubResource("TileSetAtlasSource_o43ah")
+sources/3 = SubResource("TileSetAtlasSource_457nn")
+sources/4 = SubResource("TileSetAtlasSource_u7wxv")
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_50g1c")

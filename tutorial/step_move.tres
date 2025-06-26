@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_nghi4")
-text = "Move right using the D key"
+text = "Press the arrow keys to move left or right."
 audio_path = "res://audio/Right.ogg"
-action_required = "move_right"
-duration = 3.0
+action_required = "move"
+duration = 5.0
 metadata/_custom_type_script = "uid://5gcmikkokxyg"
