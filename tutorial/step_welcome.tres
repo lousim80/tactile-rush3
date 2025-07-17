@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=3 format=3 uid="uid://fhwiusnsmdta"]
+
+[ext_resource type="AudioStream" uid="uid://dsikfcshktb7l" path="res://audio/welcome.mp3" id="1_8saae"]
+[ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_shnb0"]
+
+[resource]
+script = ExtResource("1_shnb0")
+text = "Welcome to the game! Let's learn the basics. You control this red blob. You need to use him to move around and deliver items to the end of the level."
+audio = ExtResource("1_8saae")
+duration = 7.0
+action_required = ""
+metadata/_custom_type_script = "uid://5gcmikkokxyg"

@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://c7gyrht72ibes"]
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=3 format=3 uid="uid://c7gyrht72ibes"]
 
 [ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_3luex"]
+[ext_resource type="AudioStream" uid="uid://bg5jbtwwgcjya" path="res://audio/Crouch.mp3" id="1_xiep8"]
 
 [resource]
 script = ExtResource("1_3luex")
-text = "Hold down to crouch under tight spaces."
-audio_path = ""
+text = "Hold down The S key or the down arrow to crouch under tight spaces."
+audio = ExtResource("1_xiep8")
+duration = 4.0
 action_required = "crouch"
-duration = 3.0
 metadata/_custom_type_script = "uid://5gcmikkokxyg"

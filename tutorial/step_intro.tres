@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://dggdxrfl1x245"]
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=3 format=3 uid="uid://dggdxrfl1x245"]
 
 [ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_6dbib"]
+[ext_resource type="AudioStream" uid="uid://dmk1y305t8t7x" path="res://audio/intro.mp3" id="1_o6cay"]
 
 [resource]
 script = ExtResource("1_6dbib")
 text = "Welcome to the game! Let's learn the basics."
-audio_path = "res://audio/welcome.ogg"
-action_required = ""
+audio = ExtResource("1_o6cay")
 duration = 3.5
+action_required = ""
 metadata/_custom_type_script = "uid://5gcmikkokxyg"

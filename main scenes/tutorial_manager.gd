@@ -1,56 +1,56 @@
 extends Node
-
 class_name TutorialManager
 
-@export var steps: Array[Dictionary] = []
+@export var steps: Array[TutorialStep] = []
+
 @onready var subtitle_label: Label = $SubtitleLabel
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 
-var step_index = 0
-var waiting_for_input = false
+var step_index: int = 0
+var waiting_for_input: bool = false
 
 func _ready():
-	start_step(step_index)
+	if steps.size() > 0:
+		start_step(step_index)
+	else:
+		print("No tutorial steps assigned.")
 
 func start_step(index: int):
 	if index >= steps.size():
 		subtitle_label.text = ""
+		print("Tutorial finished.")
 		return
 
-	var step = steps[index]
-	subtitle_label.text = step["text"]
+	var step: TutorialStep = steps[index]
+	subtitle_label.text = step.text
 
-	if GlobalSettings.tts_enabled:
-		speak_text(step["text"])
-		await get_tree().create_timer(step["duration"]).timeout
-	elif step.has("audio") and step["audio"] != "":
-		audio_player.stream = load(step["audio"])
+	if step.audio:
+		audio_player.stream = step.audio
 		audio_player.play()
 		await audio_player.finished
-	elif not step.has("action_required"):
-		await get_tree().create_timer(step["duration"]).timeout
+	elif step.duration > 0:
+		await get_tree().create_timer(step.duration).timeout
 
-	if step.has("action_required"):
+	# **Pause for 1.5 seconds before proceeding**
+	await get_tree().create_timer(1.5).timeout
+
+	if step.action_required != "":
 		waiting_for_input = true
 	else:
 		next_step()
-
-func next_step():
-	step_index += 1
-	start_step(step_index)
 
 func _process(_delta):
 	if not waiting_for_input:
 		return
 
-	var step = steps[step_index]
-	match step["action_required"]:
+	var step: TutorialStep = steps[step_index]
+	match step.action_required:
 		"jump":
-			if Input.is_action_just_pressed("ui_accept"):  # Replace with your actual jump input
+			if Input.is_action_just_pressed("ui_accept"):
 				waiting_for_input = false
 				next_step()
 		"move":
-			if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+			if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 				waiting_for_input = false
 				next_step()
 		"crouch":
@@ -58,14 +58,10 @@ func _process(_delta):
 				waiting_for_input = false
 				next_step()
 		"interact":
-			if Input.is_action_just_pressed("ui_select"):  # Replace as needed
+			if Input.is_action_just_pressed("ui_select"):
 				waiting_for_input = false
 				next_step()
 
-func speak_text(text: String):
-	if OS.get_name() == "Windows":
-		OS.execute("powershell", ["-Command", "Add-Type –AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('" + text + "')"], false)
-	elif OS.get_name() == "Darwin":
-		OS.execute("say", [text], false)
-	elif OS.get_name() == "Linux":
-		OS.execute("espeak", [text], false)
+func next_step():
+	step_index += 1
+	start_step(step_index)

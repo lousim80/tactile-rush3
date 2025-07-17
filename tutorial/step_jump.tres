@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://ctfr82fwtshvv"]
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=3 format=3 uid="uid://ctfr82fwtshvv"]
 
 [ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_82j7n"]
+[ext_resource type="AudioStream" uid="uid://cm5sf1of6fs81" path="res://audio/Jump.mp3" id="1_vaput"]
 
 [resource]
 script = ExtResource("1_82j7n")
 text = "Great! Now try jumping by pressing the space bar."
-audio_path = "res://audio/welcome.ogg"
-action_required = "jump"
+audio = ExtResource("1_vaput")
 duration = 4.0
+action_required = "jump"
 metadata/_custom_type_script = "uid://5gcmikkokxyg"

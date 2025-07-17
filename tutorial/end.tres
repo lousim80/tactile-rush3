@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://d3do7mdgs6kjk"]
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=3 format=3 uid="uid://d3do7mdgs6kjk"]
 
 [ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_0vwl5"]
+[ext_resource type="AudioStream" uid="uid://dmmapga16ugbf" path="res://audio/end.mp3" id="1_j1p1f"]
 
 [resource]
 script = ExtResource("1_0vwl5")
-text = "That’s it for now. Good luck and have fun!"
-audio_path = ""
-action_required = ""
+text = "That’s it for now. Good luck and have fun! and remember to stay Tactile"
+audio = ExtResource("1_j1p1f")
 duration = 3.5
+action_required = ""
 metadata/_custom_type_script = "uid://5gcmikkokxyg"

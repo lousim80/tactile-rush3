@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://bla6d4s62co3s"]
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=3 format=3 uid="uid://bla6d4s62co3s"]
 
+[ext_resource type="AudioStream" uid="uid://ck2y750nuk1te" path="res://audio/move.mp3" id="1_2wxo8"]
 [ext_resource type="Script" uid="uid://5gcmikkokxyg" path="res://tutorial/tutorial_step.gd" id="1_nghi4"]
 
 [resource]
 script = ExtResource("1_nghi4")
-text = "Press the arrow keys to move left or right."
-audio_path = "res://audio/Right.ogg"
-action_required = "move"
+text = "Press the arrow keys or W A S D to move left or right. This is how you move around."
+audio = ExtResource("1_2wxo8")
 duration = 5.0
+action_required = "move"
 metadata/_custom_type_script = "uid://5gcmikkokxyg"
