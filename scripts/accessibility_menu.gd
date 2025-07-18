@@ -34,7 +34,7 @@ func _on_OptionButton_Color_item_selected(index):
 	_save_settings()
 
 func _on_Button_Back_pressed():
-	get_tree().change_scene_to_file("res://main scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://main scenes/menus/main_menu.tscn")
 
 func _save_settings():
 	var config = ConfigFile.new()

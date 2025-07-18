@@ -31,7 +31,7 @@ func spin_player(player):
 	speed = 0
 
 	# Increase speed and max speed, but cap at 700
-	if player.current_speed < 500:
+	if player.current_speed < 250:
 		player.current_speed = min(player.current_speed + 100, 700)
 		player.max_speed = min(player.max_speed + 100, 700)
 

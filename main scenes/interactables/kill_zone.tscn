@@ -1,0 +1,149 @@
+[gd_scene load_steps=13 format=3 uid="uid://cpwpt6sdtkpfu"]
+
+[ext_resource type="Script" uid="uid://bcr7tio4bwwj8" path="res://scripts/kill_zone.gd" id="1_4hlar"]
+[ext_resource type="Texture2D" uid="uid://cgpnpuk8j8n3c" path="res://Super Mango Platformer Assets by JuhoSprite/Lava.png" id="2_htlrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hlar"]
+size = Vector2(1720, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ofg1"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quiil"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqsjt"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5hs4"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wf8u"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbn80"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twky1"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alnx2"]
+atlas = ExtResource("2_htlrh")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_watpw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ofg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quiil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqsjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5hs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wf8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbn80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twky1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alnx2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="kill_zone" type="Area2D"]
+script = ExtResource("1_4hlar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-261, -1.5)
+shape = SubResource("RectangleShape2D_4hlar")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(172, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(344, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(-172, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(515, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(-860, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(-688, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(-516, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1032, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(-344, 0)
+scale = Vector2(10.7782, 1.52162)
+sprite_frames = SubResource("SpriteFrames_watpw")
+autoplay = "default"
+frame_progress = 0.25124
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

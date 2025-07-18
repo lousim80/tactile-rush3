@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://du7isygdywxnk"]
+
+[ext_resource type="Script" uid="uid://g42wjrcbuxx4" path="res://scripts/level_select.gd" id="1_0d1k0"]
+[ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="2_48t5h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ud5p"]
+bg_color = Color(0, 0.247316, 0.528243, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="level select" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0d1k0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ud5p")
+
+[node name="Button5" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 652.0
+offset_right = 1152.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("2_48t5h")
+theme_override_font_sizes/font_size = 124
+text = "Back"
+
+[node name="level select" type="Label" parent="Panel"]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("2_48t5h")
+theme_override_font_sizes/font_size = 150
+text = "Level select"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 155.0
+offset_top = 207.0
+offset_right = 386.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("2_48t5h")
+theme_override_font_sizes/font_size = 100
+text = "Level 1"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 757.0
+offset_top = 204.0
+offset_right = 1011.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("2_48t5h")
+theme_override_font_sizes/font_size = 100
+text = "Level 2"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 151.0
+offset_top = 389.0
+offset_right = 401.0
+offset_bottom = 527.0
+theme_override_fonts/font = ExtResource("2_48t5h")
+theme_override_font_sizes/font_size = 100
+text = "Level 3"
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 760.0
+offset_top = 389.0
+offset_right = 1008.0
+offset_bottom = 527.0
+theme_override_fonts/font = ExtResource("2_48t5h")
+theme_override_font_sizes/font_size = 100
+text = "Level 4"

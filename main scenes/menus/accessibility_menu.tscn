@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://oioilrhqxgi4"]
+
+[ext_resource type="Script" uid="uid://dpkl2l0iojtj" path="res://scripts/accessibility_menu.gd" id="1_8iidp"]
+[ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="2_hrsi1"]
+[ext_resource type="FontFile" uid="uid://dk23yk88oc1w3" path="res://fonts/SavageGarden-Block.otf" id="3_6cpl8"]
+
+[sub_resource type="Theme" id="Theme_xfdd1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vjsm"]
+bg_color = Color(0, 0.247316, 0.528243, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="AccessibilityMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xfdd1")
+script = ExtResource("1_8iidp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3vjsm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -318.0
+offset_right = 570.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("2_hrsi1")
+theme_override_font_sizes/font_size = 124
+text = "Accessibility Settings"
+
+[node name="CheckBox_TTS" type="CheckBox" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+text = "Text-to-Speech"
+
+[node name="CheckBox_Sign" type="CheckBox" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+text = "Enable Sign Language"
+
+[node name="HBoxContainer_Color" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Color"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+text = "Color Mode:"
+
+[node name="OptionButton_Color" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer_Color"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+
+[node name="HBoxContainer_Subtitles" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+text = "Subtitles Size:"
+
+[node name="HSlider_Subtitles" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+min_value = 10.0
+max_value = 36.0
+value = 10.0
+
+[node name="subtitle_label" type="Label" parent="Panel/VBoxContainer/HBoxContainer_Subtitles"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+text = "Preview Text"
+
+[node name="Button_Back" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6cpl8")
+theme_override_font_sizes/font_size = 64
+text = "Back"
