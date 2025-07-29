@@ -1,31 +1,21 @@
 extends CharacterBody2D
 
-@export var max_speed = 150
-@export var acceleration = 35
-@export var deceleration = 100
+@export var speed = 150
+
 @export var gravity = 20
 @export var jump_force = 250
 
-@export var speed_boost_amount = 200
-@export var speed_boost_duration = 3.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var Jumps = 0
 
-var current_speed = 0
-var can_climb := false
-var speed_boost_timer := 0.0
-var base_max_speed = 0  # Store original max speed after ready
 
-func _ready():
-	base_max_speed = max_speed  # ✅ Correctly assign after exports are set
+var can_climb := false
+
+
 
 func _physics_process(delta):
 	# Handle speed boost duration
-	if speed_boost_timer > 0:
-		speed_boost_timer -= delta
-		if speed_boost_timer <= 0:
-			max_speed = base_max_speed  # Reset to original speed
 
 	if !can_climb:
 		# Gravity
@@ -44,12 +34,7 @@ func _physics_process(delta):
 		# Horizontal movement
 		var horizontal_direction = Input.get_axis("move_left", "move_right")
 
-		if horizontal_direction != 0:
-			current_speed = min(current_speed + acceleration * delta, max_speed)
-		else:
-			current_speed = max(current_speed - deceleration * delta, 0)
-
-		velocity.x = current_speed * horizontal_direction
+		velocity.x = speed * horizontal_direction
 	else:
 		# Disable all movement while climbing (handled by climb zone)
 		velocity = Vector2.ZERO

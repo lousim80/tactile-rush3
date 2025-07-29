@@ -16,24 +16,21 @@ func spin_player(player):
 	player.velocity.y = 0
 
 	# Save current speed, stop the player, and wait for the spin
-	speed = player.current_speed
-	player.current_speed = 0
+	speed = player.speed
+	player.speed = 0
 	await tween.finished
 
 	# Apply upward boost
-	player.current_speed = speed
+	player.speed = speed
 	player.velocity.y = -300
 	player.rotation_degrees = 0
 	await get_tree().create_timer(0.1).timeout
 
 	# Restore gravity
+
 	player.gravity = 20
 	speed = 0
 
-	# Increase speed and max speed, but cap at 700
-	if player.current_speed < 250:
-		player.current_speed = min(player.current_speed + 100, 700)
-		player.max_speed = min(player.max_speed + 100, 700)
 
 	# Optionally pause before allowing another interaction (cooldown)
 	await get_tree().create_timer(2).timeout

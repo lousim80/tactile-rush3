@@ -29,8 +29,6 @@ func _on_body_exited(body):
 		player.can_climb = false
 
 		# Apply speed boost
-		player.max_speed += player.speed_boost_amount
-		player.speed_boost_timer = player.speed_boost_duration
 
 		player = null
 
