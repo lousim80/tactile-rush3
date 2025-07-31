@@ -22,15 +22,16 @@ func spin_player(player):
 
 	# Apply upward boost
 	player.speed = speed
-	player.velocity.y = -300
+	player.velocity.y = -220
 	player.rotation_degrees = 0
 	await get_tree().create_timer(0.1).timeout
 
-	# Restore gravity
+	# ✅ Reset jumps after spin
+	player.Jumps = 0
 
+	# Restore gravity
 	player.gravity = 20
 	speed = 0
-
 
 	# Optionally pause before allowing another interaction (cooldown)
 	await get_tree().create_timer(2).timeout
