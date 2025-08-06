@@ -457,8 +457,11 @@ position = Vector2(-2383, 239)
 [node name="kill_zone2" parent="." instance=ExtResource("6_xa5h8")]
 position = Vector2(-664, 239)
 
+[node name="Area2D4" parent="." instance=ExtResource("8_627d0")]
+position = Vector2(286, -340)
+
 [node name="Area2D2" parent="." instance=ExtResource("8_627d0")]
-position = Vector2(-952, -57)
+position = Vector2(-126, -473)
 
 [node name="Area2D3" parent="." instance=ExtResource("8_627d0")]
 position = Vector2(-978, -504)
