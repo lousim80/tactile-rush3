@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://du4d6cl52ev12"]
+[gd_scene load_steps=27 format=3 uid="uid://du4d6cl52ev12"]
 
 [ext_resource type="Texture2D" uid="uid://cb1sq5otwgnh4" path="res://Super Mango Platformer Assets by JuhoSprite/Leaf_Tileset.png" id="1_i6k66"]
 [ext_resource type="Texture2D" uid="uid://h124hroyvg4m" path="res://Super Mango Platformer Assets by JuhoSprite/Sky_Background_0.png" id="1_iqrgk"]
@@ -13,8 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://6avo6d0nxqmj" path="res://main scenes/interactables/area_2d.tscn" id="8_627d0"]
 [ext_resource type="PackedScene" uid="uid://vt3jjff6qh6p" path="res://main scenes/interactables/flippy_spinny.tscn" id="9_rqu7v"]
 [ext_resource type="PackedScene" uid="uid://bx5h8y7xlpd2f" path="res://main scenes/interactables/climb.tscn" id="10_sbqqk"]
-[ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="14_cj5pm"]
-[ext_resource type="Script" uid="uid://c4k5s6tojq573" path="res://main scenes/levels/b2.gd" id="15_xa5h8"]
+[ext_resource type="PackedScene" uid="uid://c1tvxmk7urhk6" path="res://main scenes/interactables/ui.tscn" id="14_cj5pm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gme3x"]
 texture = ExtResource("1_iqrgk")
@@ -458,7 +457,7 @@ position = Vector2(-2383, 239)
 position = Vector2(-664, 239)
 
 [node name="Area2D4" parent="." instance=ExtResource("8_627d0")]
-position = Vector2(286, -340)
+position = Vector2(287, -340)
 
 [node name="Area2D2" parent="." instance=ExtResource("8_627d0")]
 position = Vector2(-126, -473)
@@ -493,15 +492,4 @@ position = Vector2(-2421, -383)
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
-[node name="Button" type="Button" parent="Player/Camera2D2"]
-offset_left = 119.0
-offset_top = -162.0
-offset_right = 288.0
-offset_bottom = -112.0
-theme_override_fonts/font = ExtResource("14_cj5pm")
-theme_override_font_sizes/font_size = 32
-text = "Back To Menu"
-script = ExtResource("15_xa5h8")
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Player/Camera2D2/Button" to="Player/Camera2D2/Button" method="_on_pressed"]
+[node name="UI" parent="." instance=ExtResource("14_cj5pm")]

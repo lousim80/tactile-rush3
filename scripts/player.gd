@@ -1,21 +1,19 @@
 extends CharacterBody2D
 
 @export var speed = 150
-
 @export var gravity = 20
 @export var jump_force = 250
 
-
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var back_button = $BackToMenuButton  # Reference the button here
 @onready var Jumps = 0
-
 
 var can_climb := false
 
-
-
 func _physics_process(delta):
-	# Handle speed boost duration
+	# Keep button upright
+	if back_button:
+		back_button.rotation_degrees = -rotation_degrees
 
 	if !can_climb:
 		# Gravity
@@ -33,10 +31,9 @@ func _physics_process(delta):
 
 		# Horizontal movement
 		var horizontal_direction = Input.get_axis("move_left", "move_right")
-
 		velocity.x = speed * horizontal_direction
 	else:
-		# Disable all movement while climbing (handled by climb zone)
+		# Disable movement while climbing
 		velocity = Vector2.ZERO
 
 	move_and_slide()
