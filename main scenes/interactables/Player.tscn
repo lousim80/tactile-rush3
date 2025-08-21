@@ -121,6 +121,7 @@ animations = [{
 radius = 17.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(1.12053, 1.12053)
 script = ExtResource("1_p4muc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

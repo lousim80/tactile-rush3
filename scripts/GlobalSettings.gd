@@ -73,3 +73,7 @@ func create_stylebox(color: Color) -> StyleBoxFlat:
 	sb.border_width_bottom = 2
 	sb.border_color = Color.BLACK
 	return sb
+
+
+var stamina: float = 3.0  # starting stamina (matches max_stamina)
+var max_stamina: float = 3.0
