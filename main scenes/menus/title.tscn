@@ -1,34 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba5mdute26kj2"]
+[gd_scene load_steps=8 format=4 uid="uid://ba5mdute26kj2"]
 
 [ext_resource type="Script" uid="uid://3qlrrac8r5qi" path="res://scripts/title.gd" id="1_kc8ss"]
-[ext_resource type="Texture2D" uid="uid://bipcmc36rjr41" path="res://Screenshot 2025-06-16 145034.png" id="2_6f84j"]
 [ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="3_6f84j"]
+[ext_resource type="PackedScene" uid="uid://dprh05wn8xinq" path="res://main scenes/interactables/Player.tscn" id="3_u2fo1"]
+[ext_resource type="Texture2D" uid="uid://1n71ja35r2o7" path="res://Super Mango Platformer Assets by JuhoSprite/Clouds.png" id="4_bt51k"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0rdgr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6f84j")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ob6m"]
+bg_color = Color(0, 0.247316, 0.528243, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ai23"]
+texture = ExtResource("4_bt51k")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nft3b"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8ai23")
 
 [node name="Title" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_kc8ss")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(577, 324)
-scale = Vector2(1.83162, 1.02606)
-sprite_frames = SubResource("SpriteFrames_0rdgr")
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 2
+[node name="Panel2" type="Panel" parent="."]
 offset_right = 1152.0
-offset_bottom = 162.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ob6m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 1146.0
+offset_bottom = 642.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -37,32 +64,42 @@ theme_override_constants/shadow_offset_y = 12
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("3_6f84j")
-theme_override_font_sizes/font_size = 124
-text = "Tactile Rush"
+theme_override_font_sizes/font_size = 224
+text = "TACTILE RUSH"
 horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-alignment = 1
-
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Main Menu"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6f84j")
+theme_override_font_sizes/font_size = 48
 text = "Level Select"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6f84j")
+theme_override_font_sizes/font_size = 48
+text = "Accessibility"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6f84j")
+theme_override_font_sizes/font_size = 48
+text = "Tutorial
+"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6f84j")
+theme_override_font_sizes/font_size = 48
 text = "Quit"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="Player" parent="." instance=ExtResource("3_u2fo1")]
+position = Vector2(580, -530)
+scale = Vector2(2.72053, 2.72053)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAXAAMAAAAAAAAAAAAYAAMAAAAAAAAAAAAZAAMAAAAAAAAAAAAaAAMAAAAAAAAAAAAbAAMAAAAAAAAAAAAcAAMAAAAAAAAAAAAdAAMAAAAAAAAAAAAeAAMAAAAAAAAAAAAfAAMAAAAAAAAAAAAgAAMAAAAAAAAAAAAhAAMAAAAAAAAAAAAiAAMAAAAAAAAAAAAjAAMAAAAAAAAAAAAkAAMAAAAAAAAAAAAlAAMAAAAAAAAAAAAmAAMAAAAAAAAAAAAnAAMAAAAAAAAAAAAoAAMAAAAAAAAAAAApAAMAAAAAAAAAAAAqAAMAAAAAAAAAAAArAAMAAAAAAAAAAAAsAAMAAAAAAAAAAAAtAAMAAAAAAAAAAAAuAAMAAAAAAAAAAAAvAAMAAAAAAAAAAAAwAAMAAAAAAAAAAAAxAAMAAAAAAAAAAAAyAAMAAAAAAAAAAAAzAAMAAAAAAAAAAAA0AAMAAAAAAAAAAAA1AAMAAAAAAAAAAAA2AAMAAAAAAAAAAAA3AAMAAAAAAAAAAAA4AAMAAAAAAAAAAAA5AAMAAAAAAAAAAAA6AAMAAAAAAAAAAAA7AAMAAAAAAAAAAAA8AAMAAAAAAAAAAAA9AAMAAAAAAAAAAAA+AAMAAAAAAAAAAAA/AAMAAAAAAAAAAABAAAMAAAAAAAAAAABBAAMAAAAAAAAAAABCAAMAAAAAAAAAAABDAAMAAAAAAAAAAABEAAMAAAAAAAAAAABFAAMAAAAAAAAAAABGAAMAAAAAAAAAAABHAAMAAAAAAAAAAABIAAMAAAAAAAAAAABIAAIAAAAAAAAAAABIAAEAAAAAAAAAAABIAAAAAAAAAAAAAABIAP//AAAAAAAAAABIAP7/AAAAAAAAAABIAP3/AAAAAAAAAABIAPz/AAAAAAAAAABIAPv/AAAAAAAAAABIAPr/AAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_nft3b")
