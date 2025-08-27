@@ -8,6 +8,8 @@ class_name TutorialManager
 
 var step_index: int = 0
 var waiting_for_input: bool = false
+var last_subtitle_size: int = 0
+
 
 func _ready():
 	if steps.size() > 0:
@@ -22,6 +24,10 @@ func start_step(index: int):
 		return
 
 	var step: TutorialStep = steps[index]
+
+	# Apply current global subtitle size
+	_apply_subtitle_size()
+
 	subtitle_label.text = step.text
 
 	if step.audio:
@@ -31,7 +37,7 @@ func start_step(index: int):
 	elif step.duration > 0:
 		await get_tree().create_timer(step.duration).timeout
 
-	# **Pause for 1.5 seconds before proceeding**
+	# Pause for 0.6 seconds before proceeding
 	await get_tree().create_timer(0.6).timeout
 
 	if step.action_required != "":
@@ -40,6 +46,11 @@ func start_step(index: int):
 		next_step()
 
 func _process(_delta):
+	# Update subtitle size if it changed
+	if GlobalSettings.subtitles_size != last_subtitle_size:
+		_apply_subtitle_size()
+		last_subtitle_size = GlobalSettings.subtitles_size
+
 	if not waiting_for_input:
 		return
 
@@ -65,3 +76,7 @@ func _process(_delta):
 func next_step():
 	step_index += 1
 	start_step(step_index)
+
+func _apply_subtitle_size():
+	if subtitle_label:
+		subtitle_label.add_theme_font_size_override("font_size", GlobalSettings.subtitles_size)

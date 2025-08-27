@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bsdf7ywrjcq5q"]
+[gd_scene load_steps=25 format=3 uid="uid://bsdf7ywrjcq5q"]
 
 [ext_resource type="PackedScene" uid="uid://dprh05wn8xinq" path="res://main scenes/interactables/Player.tscn" id="1_8hcsc"]
 [ext_resource type="Texture2D" uid="uid://cb1sq5otwgnh4" path="res://Super Mango Platformer Assets by JuhoSprite/Leaf_Tileset.png" id="2_m2t87"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://d3do7mdgs6kjk" path="res://tutorial/end.tres" id="13_1i70s"]
 [ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="14_3auxl"]
 [ext_resource type="Script" uid="uid://27tmjnj2tpuy" path="res://main scenes/menus/button.gd" id="15_m2t87"]
+[ext_resource type="FontFile" uid="uid://dk23yk88oc1w3" path="res://fonts/SavageGarden-Block.otf" id="15_tfniy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj0dm"]
 texture = ExtResource("2_m2t87")
@@ -362,10 +363,11 @@ steps = Array[ExtResource("8_m8dxa")]([ExtResource("9_q4jm6"), ExtResource("10_y
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="TutorialManager"]
 
 [node name="SubtitleLabel" type="Label" parent="TutorialManager"]
-offset_left = -223.0
-offset_top = -9.0
-offset_right = 335.0
-offset_bottom = 28.0
+texture_filter = 2
+offset_left = -222.0
+offset_top = -163.0
+offset_right = 336.0
+offset_bottom = -126.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -373,11 +375,12 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
-theme_override_fonts/font = ExtResource("14_3auxl")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("15_tfniy")
+theme_override_font_sizes/font_size = 1
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
+texture_filter = 2
 offset_left = -27.0
 offset_top = -217.0
 offset_right = 142.0
