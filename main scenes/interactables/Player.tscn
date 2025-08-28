@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dprh05wn8xinq"]
 
 [ext_resource type="Script" uid="uid://dyjx1ldov7w80" path="res://scripts/player.gd" id="1_p4muc"]
-[ext_resource type="Texture2D" uid="uid://bkkbyddtixs6i" path="res://Super Mango Platformer Assets by JuhoSprite/Player.png" id="2_1gvg7"]
+[ext_resource type="Texture2D" uid="uid://bkkbyddtixs6i" path="res://assets/Super Mango Platformer Assets by JuhoSprite/Player.png" id="2_1gvg7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wfdr"]
 atlas = ExtResource("2_1gvg7")
@@ -125,6 +125,7 @@ scale = Vector2(1.12053, 1.12053)
 script = ExtResource("1_p4muc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, -3)
 scale = Vector2(0.789249, 0.789249)
 sprite_frames = SubResource("SpriteFrames_i5tyo")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://3qlrrac8r5qi" path="res://scripts/title.gd" id="1_kc8ss"]
 [ext_resource type="FontFile" uid="uid://byy2lmdvorxki" path="res://fonts/SavageGarden-Block.woff" id="3_6f84j"]
 [ext_resource type="PackedScene" uid="uid://dprh05wn8xinq" path="res://main scenes/interactables/Player.tscn" id="3_u2fo1"]
-[ext_resource type="Texture2D" uid="uid://1n71ja35r2o7" path="res://Super Mango Platformer Assets by JuhoSprite/Clouds.png" id="4_bt51k"]
+[ext_resource type="Texture2D" uid="uid://1n71ja35r2o7" path="res://assets/Super Mango Platformer Assets by JuhoSprite/Clouds.png" id="4_bt51k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ob6m"]
 bg_color = Color(0, 0.247316, 0.528243, 1)
