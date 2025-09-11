@@ -88,3 +88,35 @@ func _apply_subtitle_size_recursive(node):
 # Existing stamina variables
 var stamina: float = 3.0
 var max_stamina: float = 3.0
+
+# -------------------
+# Progression variables
+# -------------------
+
+var unlocked_levels: Array[String] = [
+	"res://main scenes/levels/level_1.tscn"  # Level 1 always unlocked
+]
+var current_house: String = "res://houses/House1.tscn"
+
+func unlock_level(level_path: String):
+	if not level_path in unlocked_levels:
+		unlocked_levels.append(level_path)
+
+func set_next_house(house_path: String):
+	current_house = house_path
+
+func save_progress():
+	var data = {
+		"unlocked_levels": unlocked_levels,
+		"current_house": current_house,
+	}
+	var file = FileAccess.open("user://progress.json", FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+	file.close()
+
+func load_progress():
+	if FileAccess.file_exists("user://progress.json"):
+		var file = FileAccess.open("user://progress.json", FileAccess.READ)
+		var data = JSON.parse_string(file.get_as_text())
+		unlocked_levels = data.get("unlocked_levels", unlocked_levels)
+		current_house = data.get("current_house", current_house)

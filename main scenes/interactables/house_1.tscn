@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpxivxmqb82ft"]
+
+[ext_resource type="Script" uid="uid://bppn2h1tbgc2p" path="res://house_1.gd" id="1_jdus8"]
+[ext_resource type="Texture2D" uid="uid://ct3k4oj30dwrx" path="res://assets/Super Mango Platformer Assets by JuhoSprite/649986_home_512x512.png" id="2_7x6tc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo1e2"]
+size = Vector2(37, 65)
+
+[node name="House1" type="Node2D"]
+script = ExtResource("1_jdus8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(556, 301)
+scale = Vector2(0.341797, 0.341797)
+texture = ExtResource("2_7x6tc")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(556, 301)
+scale = Vector2(0.341797, 0.341797)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(30.72, 162.377)
+scale = Vector2(2.92571, 2.92571)
+shape = SubResource("RectangleShape2D_fo1e2")
